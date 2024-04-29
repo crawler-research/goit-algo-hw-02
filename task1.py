@@ -16,8 +16,11 @@ def process_request():
     else:
         print("Черга порожня. Немає заявок для обробки.")
 
-while True:
-    generate_request()
-    generate_request()
-    process_request()
-    time.sleep(1)
+try:
+    while True:
+        generate_request()
+        generate_request()
+        process_request()
+        time.sleep(1)
+except KeyboardInterrupt:
+    print("\nПрограма була зупинена користувачем.")
